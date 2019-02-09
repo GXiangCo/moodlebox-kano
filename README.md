@@ -4,7 +4,7 @@
 [![GitHub Release Date](https://img.shields.io/github/release-date/GXiangCo/moodlebox-kano.svg)](https://github.com/GXiangCo/moodlebox-kano/releases/latest)
 [![GitHub last commit](https://img.shields.io/github/last-commit/GXiangCo/moodlebox-kano.svg)](https://github.com/GXiangCo/moodlebox-kano/commits/)
 
-A project to build a Moodle server and Wi-Fi router on a [!Kano OS](https://hello.kano.me/downloads/).
+A project to build a Moodle server and Wi-Fi router on a [Kano OS](https://hello.kano.me/downloads/).
 
 
 ## License
