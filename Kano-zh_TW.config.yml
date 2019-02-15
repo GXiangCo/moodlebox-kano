@@ -1,0 +1,13 @@
+---
+
+Kano_Menu_Games: '遊戲'
+Kano_Menu_Media: '多媒體'
+Kano_Menu_Code: '程式設計'
+Kano_Menu_Tools: '工具'
+Kano_Menu_Others: '其他'
+Kano_Menu_Apps: '套件管理程式' 
+Kano_Menu_Files: '檔案總管'
+Kano_Menu_Shutdown: '登出'
+# kano-apps.desktop
+# files.desktop
+# kano-shutdown.desktop

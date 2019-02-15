@@ -1,0 +1,13 @@
+---
+
+- name: playbook to provision most of the Kano OS
+  hosts: all  
+  become: yes
+
+  vars_files:
+    - default.config.yml
+    - Kano-zh_TW.config.yml
+
+  roles:
+    # - kano-init
+    - kano-zh_TW

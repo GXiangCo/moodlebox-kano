@@ -1,0 +1,70 @@
+---
+
+- name: configure MariaDB root password
+  debconf:
+    name: 'mariadb-server'
+    question: '{{ item }}'
+    vtype: 'password'
+    value: '{{ moodlebox_db_root_password }}'
+  with_items:
+    - 'mysql-server/root_password'
+    - 'mysql-server/root_password_again'
+  register: configure_mariadb_install
+
+- name: configure phpMyAdmin password
+  debconf:
+    name: 'phpmyadmin'
+    question: '{{ item }}'
+    vtype: 'password'
+    value: '{{ moodlebox_db_root_password }}'
+  with_items:
+    - 'phpmyadmin/mysql/admin-pass'
+    - 'phpmyadmin/mysql/app-pass'
+    - 'phpmyadmin/app-password-confirm'
+
+- name: configure phpMyAdmin reconfigure
+  debconf:
+    name: 'phpmyadmin'
+    question: 'phpmyadmin/reconfigure-webserver'
+    value: 'none'
+    vtype: 'multiselect'
+
+- name: configure phpMyAdmin dbconfig
+  debconf:
+    name: 'phpmyadmin'
+    question: 'phpmyadmin/dbconfig-install'
+    value: 'true'
+    vtype: 'boolean'
+
+- name: install MariaDB
+  apt:
+    pkg: 'mariadb-server'
+    state: 'present'
+  when: configure_mariadb_install is successful
+  register: install_mariadb
+  until: install_mariadb is succeeded
+
+- name: install python-mysqldb
+  apt:
+    pkg: 'python-mysqldb'
+    state: 'present'
+  register: py_mysql_installed
+  until: py_mysql_installed is succeeded
+
+- name: add '{{ moodlebox_db_username }}' MariaDB user with all privileges
+  mysql_user:
+    name: '{{ moodlebox_db_username }}'
+    host: 'localhost'
+    password: '{{ moodlebox_db_password }}'
+    priv: '*.*:ALL,GRANT'
+    state: 'present'
+
+- name: update MariaDB settings
+  copy:
+    src: 'etc/mysql/mariadb.conf.d/50-server.cnf'
+    dest: '/etc/mysql/mariadb.conf.d/50-server.cnf'
+
+- name: restart MariaDB database
+  service:
+    name: 'mariadb'
+    state: 'restarted'

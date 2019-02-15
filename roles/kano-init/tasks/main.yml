@@ -1,0 +1,54 @@
+---
+
+- name: update dropbear configuration file
+  template:
+    src: 'etc/default/dropbear.j2'
+    dest: '/etc/default/dropbear'
+
+- name: restart dropbear ssh service
+  service:
+    name: 'dropbear'
+    state: 'restarted'
+
+- name: install packages
+  apt:
+    pkg: '{{ kano_install_packages }}'
+    state: 'present'
+    update_cache: 'yes'
+    autoremove: 'yes'
+  register: kano_packages_installed
+  until: kano_packages_installed is succeeded
+
+- name: update apt cache and upgrade
+  apt:
+    update_cache: 'yes'
+    upgrade: 'dist'
+    autoclean: 'yes'
+    autoremove: 'yes'
+  register: apt_upgrade
+  until: apt_upgrade is succeeded
+  
+  
+- name: deploy default locale
+  template:
+    src: 'etc/default/locale.j2'
+    dest: '/etc/default/locale'
+
+- name: add locales
+  locale_gen:
+    name: '{{ item }}'
+    state: 'present'
+  with_items: '{{ moodlebox_locales }}'
+  notify: generate locales
+
+- name: create link /usr/bin/rfkill
+  file:
+    src: '/usr/sbin/rfkill'
+    path: '/usr/bin/rfkill'
+    state: 'link'
+
+- name: create link /usr/bin/dpkg-reconfigure
+  file:
+    src: '/usr/sbin/dpkg-reconfigure'
+    path: '/usr/bin/dpkg-reconfigure'
+    state: 'link'

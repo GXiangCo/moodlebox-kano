@@ -1,0 +1,16 @@
+---
+
+- name: set wifi country to '{{ moodlebox_wifi_country }}'
+  lineinfile:
+    path: '/etc/wpa_supplicant/wpa_supplicant.conf'
+    regexp: '^country='
+    line: 'country={{ moodlebox_wifi_country }}'
+  notify: restart networking
+
+- name: get wifi blocked status
+  command: 'rfkill list wifi'
+  register: wifi_blocked_status
+  changed_when: '"Soft blocked: yes" in wifi_blocked_status.stdout'
+  notify:
+    - unblock wifi
+    - restart networking
