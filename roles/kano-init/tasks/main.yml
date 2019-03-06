@@ -41,14 +41,14 @@
   with_items: '{{ moodlebox_locales }}'
   notify: generate locales
 
-- name: create link /usr/bin/rfkill
-  file:
-    src: '/usr/sbin/rfkill'
-    path: '/usr/bin/rfkill'
-    state: 'link'
+# - name: create link /usr/bin/rfkill
+#   file:
+#     src: '/usr/sbin/rfkill'
+#     path: '/usr/bin/rfkill'
+#     state: 'link'
 
-- name: create link /usr/bin/dpkg-reconfigure
-  file:
-    src: '/usr/sbin/dpkg-reconfigure'
-    path: '/usr/bin/dpkg-reconfigure'
-    state: 'link'
+# - name: create link /usr/bin/dpkg-reconfigure
+#   file:
+#     src: '/usr/sbin/dpkg-reconfigure'
+#     path: '/usr/bin/dpkg-reconfigure'
+#     state: 'link'

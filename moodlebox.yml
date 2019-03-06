@@ -4,6 +4,6 @@
 # brew install sshpass
 ---
 
-# - import_playbook: rootaccount.yml
-- import_playbook: buildkano.yml
-# - import_playbook: buildmoodlebox.yml
+ - import_playbook: rootaccount.yml
+ - import_playbook: buildkano.yml
+ # - import_playbook: buildmoodlebox.yml

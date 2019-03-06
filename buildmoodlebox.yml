@@ -16,8 +16,8 @@
         - config.yml
 
   roles:
-    - bootstrap
-    - install
+    # - bootstrap
+    # - install
     # - network
     # - moodle
     # - cleanup

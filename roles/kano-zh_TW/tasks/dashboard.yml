@@ -1,0 +1,7 @@
+---
+
+- name: update access point settings
+  lineinfile:
+    path: '/home/pi/wifi_details.qml'
+    regexp: "text: qsTr\('IP "
+    line: 'IP位址: '

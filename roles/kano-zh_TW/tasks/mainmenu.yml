@@ -1,0 +1,41 @@
+---
+
+- name: zh_TW kano-games.directory 
+  template:
+    src: 'usr/share/desktop-directories/kano-games.directory.j2'
+    dest: '/usr/share/desktop-directories/kano-games.directory'
+
+- name: zh_TW kano-media.directory 
+  template:
+    src: 'usr/share/desktop-directories/kano-media.directory.j2'
+    dest: '/usr/share/desktop-directories/kano-media.directory'
+
+- name: zh_TW kano-code.directory 
+  template:
+    src: 'usr/share/desktop-directories/kano-code.directory.j2'
+    dest: '/usr/share/desktop-directories/kano-code.directory'
+
+- name: zh_TW kano-tools.directory 
+  template:
+    src: 'usr/share/desktop-directories/kano-tools.directory.j2'
+    dest: '/usr/share/desktop-directories/kano-tools.directory'
+
+- name: zh_TW kano-others.directory 
+  template:
+    src: 'usr/share/desktop-directories/kano-others.directory.j2'
+    dest: '/usr/share/desktop-directories/kano-others.directory'
+
+- name: zh_TW kano-apps.desktop 
+  template:
+    src: 'usr/share/applications/kano-apps.desktop.j2'
+    dest: '/usr/share/applications/kano-apps.desktop'
+
+- name: zh_TW files.desktop 
+  template:
+    src: 'usr/share/applications/files.desktop.j2'
+    dest: '/usr/share/applications/files.desktop'
+
+- name: zh_TW kano-shutdown.desktop 
+  template:
+    src: 'usr/share/applications/kano-shutdown.desktop.j2'
+    dest: '/usr/share/applications/kano-shutdown.desktop'
