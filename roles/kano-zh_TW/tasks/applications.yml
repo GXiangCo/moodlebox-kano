@@ -1,0 +1,63 @@
+---
+
+- name: applications auto_chromium.desktop
+  copy:
+    src: 'usr/share/applications/auto_chromium.desktop'
+    dest: '/usr/share/applications/auto_chromium.desktop'
+
+- name: applications auto_feedback.desktop
+  copy:
+    src: 'usr/share/applications/auto_feedback.desktop'
+    dest: '/usr/share/applications/auto_feedback.desktop'
+
+- name: applications auto_files.desktop
+  copy:
+    src: 'usr/share/applications/auto_files.desktop'
+    dest: '/usr/share/applications/auto_files.desktop'
+
+- name: applications auto_settings.desktop
+  copy:
+    src: 'usr/share/applications/auto_settings.desktop'
+    dest: '/usr/share/applications/auto_settings.desktop'
+
+- name: applications auto_updater.desktop
+  copy:
+    src: 'usr/share/applications/auto_updater.desktop'
+    dest: '/usr/share/applications/auto_updater.desktop'
+
+
+- name: create directory /usr/share/applications/locale/zh_TW
+  file:
+    path: /usr/share/applications/locale/zh_TW
+    state: directory
+    mode: 0755
+
+- name: applications chromium.app
+  copy:
+    src: 'usr/share/applications/locale/zh_TW/chromium.app'
+    dest: '/usr/share/applications/locale/zh_TW/chromium.app'
+
+- name: applications feedback.app
+  copy:
+    src: 'usr/share/applications/locale/zh_TW/feedback.app'
+    dest: '/usr/share/applications/locale/zh_TW/feedback.app'
+
+- name: applications files.app
+  copy:
+    src: 'usr/share/applications/locale/zh_TW/files.app'
+    dest: '/usr/share/applications/locale/zh_TW/files.app'
+
+- name: applications make-snake.app
+  copy:
+    src: 'usr/share/applications/locale/zh_TW/make-snake.app'
+    dest: '/usr/share/applications/locale/zh_TW/make-snake.app'
+
+- name: applications settings.app
+  copy:
+    src: 'usr/share/applications/locale/zh_TW/settings.app'
+    dest: '/usr/share/applications/locale/zh_TW/settings.app'
+
+- name: applications updater.app
+  copy:
+    src: 'usr/share/applications/locale/zh_TW/updater.app'
+    dest: '/usr/share/applications/locale/zh_TW/updater.app'

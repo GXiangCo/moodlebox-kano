@@ -1,7 +1,76 @@
 ---
 
-- name: update access point settings
-  lineinfile:
-    path: '/home/pi/wifi_details.qml'
-    regexp: "text: qsTr\('IP "
-    line: 'IP位址: '
+- name: Apps computer_mode.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/Apps/computer_mode.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/Apps/computer_mode.qml'
+    # owner: foo
+    # group: foo
+    # mode: 0644
+- name: Apps creative_mode.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/Apps/creative_mode.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/Apps/creative_mode.qml'
+
+
+- name: Notifications notification_list.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/Notifications/notification_list.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/Notifications/notification_list.qml'
+
+
+- name: PowerMenu power_menu.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/PowerMenu/power_menu.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/PowerMenu/power_menu.qml'
+
+- name: StoryMode story_mode.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/StoryMode/story_mode.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/StoryMode/story_mode.qml'
+
+
+- name: LatestView major_update_notification.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/LatestView/major_update_notification.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/LatestView/major_update_notification.qml'
+
+- name: LatestView no_internet.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/LatestView/no_internet.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/LatestView/no_internet.qml'
+
+- name: LatestView no_profile.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/LatestView/no_profile.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/LatestView/no_profile.qml'
+
+- name: LatestView update_notifications.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/LatestView/update_notifications.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/LatestView/update_notifications.qml'
+
+- name: LatestView shares.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/LatestView/shares.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/LatestView/shares.qml'
+
+- name: Status wifi_details.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/Status/wifi_details.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/Status/wifi_details.qml'
+
+- name: UserProgress user_progress.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/Widgets/UserProgress/user_progress.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/Widgets/UserProgress/user_progress.qml'
+
+- name: BootWarning boot_warning.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/BootWarning/boot_warning.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/BootWarning/boot_warning.qml'
+
+- name: BootWarning boot_warning_ckc.qml
+  copy:
+    src: 'usr/share/kano-dashboard/KanoDashboard/BootWarning/boot_warning_ckc.qml'
+    dest: '/usr/share/kano-dashboard/KanoDashboard/BootWarning/boot_warning_ckc.qml'

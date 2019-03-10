@@ -2,4 +2,4 @@ kano_install_packages:
   - ttf-wqy-microhei
   - ttf-wqy-zenhei
   - xfonts-wqy
-  - rfkill
+  # - rfkill

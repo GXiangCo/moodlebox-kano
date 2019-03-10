@@ -1,0 +1,22 @@
+---
+
+- name: create directory /usr/share/kano-desktop/icons/i18n/zh_TW
+  file:
+    path: /usr/share/kano-desktop/icons/i18n/zh_TW
+    state: directory
+    mode: 0755
+
+- name: kano-desktop auto_feedback.desktop
+  copy:
+    src: 'usr/share/kano-desktop/icons/i18n/zh_TW/Home-hover.png'
+    dest: '/usr/share/kano-desktop/icons/i18n/zh_TW/Home-hover.png'
+
+- name: kano-desktop Snake-hover.png
+  copy:
+    src: 'usr/share/kano-desktop/icons/i18n/zh_TW/Snake-hover.png'
+    dest: '/usr/share/kano-desktop/icons/i18n/zh_TW/Snake-hover.png'
+
+- name: kano-desktop internet-hover.png
+  copy:
+    src: 'usr/share/kano-desktop/icons/i18n/zh_TW/internet-hover.png'
+    dest: '/usr/share/kano-desktop/icons/i18n/zh_TW/internet-hover.png'

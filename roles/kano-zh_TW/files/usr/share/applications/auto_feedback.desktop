@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=/usr/bin/kano-feedback feedback
+Icon=feedback
+Terminal=false
+Name=Feedback
+Name[zh_TW]=回饋意見
+Name[es_AR]=Comentarios y Sugerencias
+Comment=Share your feedback with us
+Comment[es_AR]=Comentarios y Sugerencias
+Comment[zh_TW]=與我們分享您的回饋意見
+Categories=others;

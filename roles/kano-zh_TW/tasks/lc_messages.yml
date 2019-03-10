@@ -1,0 +1,41 @@
+---
+
+- name: LC_MESSAGES kano-apps.mo
+  copy:
+    src: 'usr/share/locale/zh_TW/LC_MESSAGES/kano-apps.mo'
+    dest: '/usr/share/locale/zh_TW/LC_MESSAGES/kano-apps.mo'
+
+- name: LC_MESSAGES kano-desktop.mo
+  copy:
+    src: 'usr/share/locale/zh_TW/LC_MESSAGES/kano-desktop.mo'
+    dest: '/usr/share/locale/zh_TW/LC_MESSAGES/kano-desktop.mo'
+
+- name: LC_MESSAGES kano-feedback.mo
+  copy:
+    src: 'usr/share/locale/zh_TW/LC_MESSAGES/kano-feedback.mo'
+    dest: '/usr/share/locale/zh_TW/LC_MESSAGES/kano-feedback.mo'
+
+- name: LC_MESSAGES kano-greeter.mo
+  copy:
+    src: 'usr/share/locale/zh_TW/LC_MESSAGES/kano-greeter.mo'
+    dest: '/usr/share/locale/zh_TW/LC_MESSAGES/kano-greeter.mo'
+
+- name: LC_MESSAGES kano-init.mo
+  copy:
+    src: 'usr/share/locale/zh_TW/LC_MESSAGES/kano-init.mo'
+    dest: '/usr/share/locale/zh_TW/LC_MESSAGES/kano-init.mo'
+
+- name: LC_MESSAGES kano-peripherals.mo
+  copy:
+    src: 'usr/share/locale/zh_TW/LC_MESSAGES/kano-peripherals.mo'
+    dest: '/usr/share/locale/zh_TW/LC_MESSAGES/kano-peripherals.mo'
+
+- name: LC_MESSAGES kano-profile.mo
+  copy:
+    src: 'usr/share/locale/zh_TW/LC_MESSAGES/kano-profile.mo'
+    dest: '/usr/share/locale/zh_TW/LC_MESSAGES/kano-profile.mo'
+
+- name: LC_MESSAGES kano-settings.mo
+  copy:
+    src: 'usr/share/locale/zh_TW/LC_MESSAGES/kano-settings.mo'
+    dest: '/usr/share/locale/zh_TW/LC_MESSAGES/kano-settings.mo'

@@ -3,9 +3,17 @@
 # - name: change Classic Mode Main Menu
 #   import_tasks: mainmenu.yml
 
+- name: change applications
+  import_tasks: applications.yml
 
 - name: change kano-dashboard
   import_tasks: dashboard.yml
+
+- name: change kano-desktop
+  import_tasks: kano-desktop.yml
+
+# - name: change lc_messages
+#   import_tasks: lc_messages.yml
 
 
 
@@ -21,6 +29,6 @@
 #     port: 22
 #     state: 'started'
 #     delay: 10
-#     timeout: 60
+#     timeout: 120
 #   delegate_to: localhost
 #   become: false
