@@ -1,0 +1,12 @@
+table Icon
+  Caption:
+  AppID: droopy
+  Command: /home/pi/go38-droopy/droopy_desktop.sh
+  Singleton: true
+  Icon: /usr/share/kano-desktop/icons/Droopy.png
+  IconHover: /usr/share/kano-desktop/icons/Droopy-hover.png
+  HoverXOffset: 0
+  Relative-To: grid
+  X: 5
+  Y: 0
+end

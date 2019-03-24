@@ -10,4 +10,5 @@
 
   roles:
     # - kano-init
-    - kano-zh_TW
+    # - kano-zh_TW
+    - kano-droopy

@@ -28,11 +28,10 @@
   register: apt_upgrade
   until: apt_upgrade is succeeded
   
-  
-- name: deploy default locale
-  template:
-    src: 'etc/default/locale.j2'
-    dest: '/etc/default/locale'
+# - name: deploy default locale
+#   template:
+#     src: 'etc/default/locale.j2'
+#     dest: '/etc/default/locale'
 
 - name: add locales
   locale_gen:

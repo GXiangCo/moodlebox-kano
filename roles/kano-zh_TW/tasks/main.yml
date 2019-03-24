@@ -1,7 +1,7 @@
 ---
 
-# - name: change Classic Mode Main Menu
-#   import_tasks: mainmenu.yml
+- name: change Classic Mode Main Menu
+  import_tasks: mainmenu.yml
 
 - name: change applications
   import_tasks: applications.yml
@@ -12,23 +12,21 @@
 - name: change kano-desktop
   import_tasks: kano-desktop.yml
 
-# - name: change lc_messages
-#   import_tasks: lc_messages.yml
+- name: change lc_messages
+  import_tasks: lc_messages.yml
 
+- name: reboot machine
+  shell: 'sleep 2 && shutdown -r now'
+  async: 1
+  poll: 0
+  ignore_errors: true
 
-
-# - name: reboot machine
-#   shell: 'sleep 2 && shutdown -r now'
-#   async: 1
-#   poll: 0
-#   ignore_errors: true
-
-# - name: wait for machine to come back
-#   wait_for:
-#     host: '{{ ansible_host | default(inventory_hostname) }}'
-#     port: 22
-#     state: 'started'
-#     delay: 10
-#     timeout: 120
-#   delegate_to: localhost
-#   become: false
+- name: wait for machine to come back
+  wait_for:
+    host: '{{ ansible_host | default(inventory_hostname) }}'
+    port: 22
+    state: 'started'
+    delay: 10
+    timeout: 120
+  delegate_to: localhost
+  become: false

@@ -1,0 +1,98 @@
+---
+
+- name: update droopy.app
+  template:
+    src: 'usr/share/applications/locale/zh_TW/droopy.app.j2'
+    dest: '/usr/share/applications/locale/zh_TW/droopy.app'
+
+- name: update auto_droopy.desktop
+  template:
+    src: 'usr/share/applications/auto_droopy.desktop.j2'
+    dest: '/usr/share/applications/auto_droopy.desktop'
+
+- name: update droopy.app
+  template:
+    src: 'usr/share/applications/droopy.app.j2'
+    dest: '/usr/share/applications/droopy.app'
+
+- name: update droopy.desktop
+  template:
+    src: 'usr/share/applications/droopy.desktop.j2'
+    dest: '/usr/share/applications/droopy.desktop'
+
+- name: update Droopy.lnk (desktop)
+  template:
+    src: 'usr/share/kano-desktop/kdesk/kdesktop/Droopy.lnk.j2'
+    dest: '/usr/share/kano-desktop/kdesk/kdesktop/Droopy.lnk'
+
+- name: add Droopy.png (desktop)
+  copy:
+    src: 'usr/share/kano-desktop/icons/Droopy.png'
+    dest: '/usr/share/kano-desktop/icons/Droopy.png'
+
+- name: add Droopy-hover.png (desktop)
+  copy:
+    src: 'usr/share/kano-desktop/icons/Droopy-hover.png'
+    dest: '/usr/share/kano-desktop/icons/Droopy-hover.png'
+
+- name: add zh_TW Droopy-hover.png (desktop)
+  copy:
+    src: 'usr/share/kano-desktop/icons/i18n/zh_TW/Droopy-hover.png'
+    dest: '/usr/share/kano-desktop/icons/i18n/zh_TW/Droopy-hover.png'
+
+- name: add Droopy.png (Dashboard)
+  copy:
+    src: 'usr/share/icons/Kano/66x66/apps/Droopy.png'
+    dest: '/usr/share/icons/Kano/66x66/apps/Droopy.png'
+
+- name: pip install qrcode
+  pip:
+    name: qrcode
+
+- name: create 'upload' directory for droopy
+  file:
+    path: /home/{{ moodlebox_username }}/upload
+    state: directory
+    mode: 0755
+    owner: '{{ moodlebox_username }}'
+    group: '{{ moodlebox_username }}'
+
+
+- name: create 'go38-droopy' directory for droopy
+  file:
+    path: /home/{{ moodlebox_username }}/go38-droopy
+    state: directory
+    mode: 0755
+    owner: '{{ moodlebox_username }}'
+    group: '{{ moodlebox_username }}'
+
+- name: go38-droopy/droopy_dashboard.sh
+  template:
+    src: 'go38-droopy/droopy_dashboard.sh.j2'
+    dest: '/home/{{ moodlebox_username }}/go38-droopy/droopy_dashboard.sh'
+    mode: 0755
+    owner: '{{ moodlebox_username }}'
+    group: '{{ moodlebox_username }}'
+
+- name: go38-droopy/droopy_desktop.sh
+  template:
+    src: 'go38-droopy/droopy_desktop.sh.j2'
+    dest: '/home/{{ moodlebox_username }}/go38-droopy/droopy_desktop.sh'
+    mode: 0755
+    owner: '{{ moodlebox_username }}'
+    group: '{{ moodlebox_username }}'
+
+- name: go38-droopy/QRC_droopy.py
+  template:
+    src: 'go38-droopy/QRC_droopy.py.j2'
+    dest: '/home/{{ moodlebox_username }}/go38-droopy/QRC_droopy.py'
+    mode: 0755
+    owner: '{{ moodlebox_username }}'
+    group: '{{ moodlebox_username }}'
+# - name: copy go38-droopy directory to user home
+#   copy:
+#     src: 'go38-droopy'
+#     dest: '/home/{{ moodlebox_username }}'
+#     mode: 0755
+#     owner: '{{ moodlebox_username }}'
+#     group: '{{ moodlebox_username }}'
